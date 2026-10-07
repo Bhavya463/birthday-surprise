@@ -62,7 +62,7 @@ function FinalSurprise() {
           <h1>
             Happy Birthday,
             <br />
-            My Love! 🎂❤️
+            My Ganda! 🎂❤️
           </h1>
 
           <div className="final-message-box">
@@ -102,7 +102,7 @@ function FinalSurprise() {
           </p>
 
           <p className="final-love">
-            I love you. ❤️
+            I love you Chinna❤️
           </p>
         </>
       )}

@@ -26,9 +26,7 @@ function Memories() {
             className="memory-image"
           />
 
-          <p>
-            One of my favorite memories with you. ❤️
-          </p>
+       
         </div>
 
         <div className="memory-card">
@@ -38,9 +36,7 @@ function Memories() {
             className="memory-image"
           />
 
-          <p>
-            A moment I wish I could relive forever. 💕
-          </p>
+       
         </div>
 
       </div>

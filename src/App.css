@@ -555,6 +555,125 @@
   font-style: italic;
 }
 
+/* Birthday Cake */
+
+.birthday-cake {
+  animation: fadeUp 1s ease;
+}
+
+.birthday-cake h1 {
+  font-size: 40px;
+  color: #c2185b;
+  margin: 20px 0;
+}
+
+.cake {
+  margin: 40px auto 25px;
+  width: 260px;
+  position: relative;
+}
+
+.candles {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  height: 75px;
+  position: relative;
+  z-index: 2;
+}
+
+.candle {
+  width: 14px;
+  height: 55px;
+  background: repeating-linear-gradient(
+    45deg,
+    #f8a5c2,
+    #f8a5c2 8px,
+    #ffffff 8px,
+    #ffffff 16px
+  );
+  border-radius: 5px 5px 2px 2px;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  animation: flameFlicker 0.8s infinite alternate;
+}
+
+.cake-top {
+  width: 230px;
+  height: 55px;
+  margin: 0 auto;
+  background: #f8b4c9;
+  border-radius: 20px 20px 8px 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22px;
+  box-shadow: 0 8px 15px rgba(180, 70, 100, 0.15);
+}
+
+.cake-middle {
+  width: 250px;
+  margin: -5px auto 0;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.cake-message {
+  font-size: 17px;
+  color: #a47783;
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+.blow-button {
+  margin-top: 15px;
+}
+
+.wish-animation {
+  font-size: 24px;
+  margin: 25px 0;
+  animation: wishSparkle 1.5s ease infinite;
+}
+
+.wish-title {
+  font-size: 32px;
+  color: #c2185b;
+  margin: 15px 0;
+}
+
+@keyframes flameFlicker {
+  from {
+    transform: translateX(-50%) scale(1);
+  }
+
+  to {
+    transform: translateX(-50%) scale(1.15);
+  }
+}
+
+@keyframes wishSparkle {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
 @media (max-width: 600px) {
   .memory-card {
     padding: 8px;

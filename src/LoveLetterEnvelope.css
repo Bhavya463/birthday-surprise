@@ -1,0 +1,496 @@
+.love-letter-section {
+  position: relative;
+  min-height: 500px;
+  animation: fadeUp 1s ease;
+}
+
+.love-letter-section h1 {
+  font-size: 40px;
+  color: #c2185b;
+  margin: 20px 0;
+}
+
+.letter-intro {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.7;
+  margin: 20px auto;
+  max-width: 450px;
+}
+
+.romantic-envelope {
+  width: 280px;
+  height: 190px;
+  margin: 45px auto 25px;
+  position: relative;
+  perspective: 800px;
+}
+
+.envelope-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 175px;
+  background: linear-gradient(
+    145deg,
+    #f8a5c2,
+    #f48fb1
+  );
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(180, 70, 100, 0.25);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.envelope-body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 0 140px 105px 140px;
+  border-color: transparent transparent #f7b6cc transparent;
+}
+
+.envelope-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 100px 140px 0 140px;
+  border-color: #ef82a8 transparent transparent transparent;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 280px;
+  height: 120px;
+  background: #f28caf;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 25px;
+  font-size: 30px;
+  z-index: 4;
+  transform-origin: top;
+  transition: transform 0.8s ease;
+}
+
+.envelope-heart {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  transform: translateX(-50%);
+  font-size: 42px;
+  z-index: 5;
+}
+
+.envelope-lock {
+  position: absolute;
+  left: 50%;
+  top: 105px;
+  transform: translateX(-50%);
+  font-size: 35px;
+  z-index: 6;
+  transition: transform 0.5s ease;
+}
+
+.unlock-text {
+  color: #a47783;
+  font-size: 15px;
+  margin: 15px 0;
+  font-style: italic;
+}
+
+.unlock-button,
+.open-letter-button {
+  margin-top: 15px;
+}
+
+.unlocked .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.unlocked-lock {
+  transform: translateX(-50%) scale(1.2);
+}
+
+.open-envelope-icon {
+  font-size: 75px;
+  margin: 15px 0;
+  animation: heartBeat 1.5s infinite;
+}
+
+.love-letter-paper {
+  max-width: 500px;
+  margin: 30px auto 0;
+  padding: 35px 30px;
+  background: #fffaf5;
+  border: 1px solid #f1d8c8;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px rgba(120, 70, 50, 0.15);
+  text-align: left;
+  position: relative;
+  z-index: 5;
+  animation: letterAppear 1s ease;
+}
+
+.love-letter-paper::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 25px;
+  right: 25px;
+  border-top: 1px solid #f1d8c8;
+}
+
+.love-letter-paper p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+  margin: 20px 0;
+}
+
+.love-letter-paper .letter-greeting {
+  color: #c2185b;
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.love-letter-paper .letter-signature {
+  text-align: right;
+  color: #c2185b;
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+/* Night Sky */
+
+.letter-opened {
+  background: linear-gradient(
+    180deg,
+    #101027 0%,
+    #211b43 55%,
+    #382348 100%
+  );
+  border-radius: 25px;
+  padding: 35px 20px;
+  overflow: hidden;
+}
+
+.letter-opened h1 {
+  color: #ffd6e5;
+}
+
+.letter-opened .small-text {
+  color: #f4c9d8;
+}
+
+.lantern-sky {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  color: #fff4c7;
+  font-size: 18px;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+
+.sky-lantern {
+  position: absolute;
+  top: -70px;
+  font-size: 38px;
+  opacity: 0;
+  animation: lanternFall 9s linear infinite;
+  filter: drop-shadow(
+    0 0 12px rgba(255, 190, 100, 0.8)
+  );
+}
+
+@keyframes lanternFall {
+
+  0% {
+    transform:
+      translateY(-70px)
+      translateX(0)
+      rotate(-3deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    transform:
+      translateY(280px)
+      translateX(25px)
+      rotate(4deg);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform:
+      translateY(650px)
+      translateX(-20px)
+      rotate(-3deg);
+    opacity: 0;
+  }
+}
+
+/* Wish Balloon */
+
+.wish-area {
+  position: relative;
+  z-index: 6;
+  margin-top: 45px;
+  padding: 25px 15px;
+}
+
+.wish-intro {
+  color: #ffe1eb;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.wish-balloon {
+  margin: 25px auto 10px;
+  height: 140px;
+  position: relative;
+}
+
+.balloon {
+  font-size: 75px;
+  animation: balloonFloat 2s ease-in-out infinite;
+}
+
+.balloon-string {
+  color: #f5d8e1;
+  font-size: 18px;
+  line-height: 12px;
+  margin-top: -5px;
+}
+
+.wish-button {
+  margin-top: 20px;
+}
+
+@keyframes balloonFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Released Balloon */
+
+.wish-released {
+  position: relative;
+  z-index: 6;
+  margin-top: 40px;
+  animation: wishReveal 1s ease;
+}
+
+.released-balloon {
+  font-size: 80px;
+  animation: balloonRise 3s ease forwards;
+}
+
+.wish-sparkles {
+  font-size: 22px;
+  margin: 15px 0;
+  animation: sparkle 1.5s infinite;
+}
+
+.wish-released h2 {
+  color: #ffd6e5;
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.wish-released p {
+  color: #ffe5ed;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+
+@keyframes balloonRise {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-120px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes wishReveal {
+
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sparkle {
+
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.lantern-message {
+  position: relative;
+  z-index: 6;
+  margin: 35px auto 10px;
+  max-width: 500px;
+  padding: 20px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.lantern-message p {
+  margin: 8px 0;
+}
+
+@keyframes letterAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .love-letter-section h1 {
+    font-size: 30px;
+  }
+
+  .letter-intro {
+    font-size: 15px;
+  }
+
+  .romantic-envelope {
+    width: 240px;
+    height: 165px;
+  }
+
+  .envelope-body {
+    width: 240px;
+    height: 150px;
+  }
+
+  .envelope-flap {
+    width: 240px;
+    height: 105px;
+  }
+
+  .envelope-body::before {
+    border-width: 0 120px 90px 120px;
+  }
+
+  .envelope-body::after {
+    border-width: 85px 120px 0 120px;
+  }
+
+  .envelope-heart {
+    top: 60px;
+    font-size: 35px;
+  }
+
+  .envelope-lock {
+    top: 90px;
+    font-size: 30px;
+  }
+
+  .love-letter-paper {
+    padding: 25px 18px;
+  }
+
+  .love-letter-paper p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .love-letter-paper .letter-greeting {
+    font-size: 18px;
+  }
+
+  .love-letter-paper .letter-signature {
+    font-size: 18px;
+  }
+
+  .sky-lantern {
+    font-size: 30px;
+  }
+
+  .lantern-message {
+    font-size: 15px;
+  }
+
+  .wish-released h2 {
+    font-size: 27px;
+  }
+
+  .released-balloon {
+    font-size: 65px;
+  }
+}

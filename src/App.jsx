@@ -2,9 +2,10 @@ import { useState, useRef } from "react";
 import "./App.css";
 
 import Welcome from "./welcome";
+import BirthdayCake from "./BirthdayCake";
 import BirthdayMessage from "./BirthdayMessage";
 import Memories from "./Memories";
-import BirthdayLetter from "./BirthdayLetter";
+import LoveLetterEnvelope from "./LoveLetterEnvelope";
 import LoveReasons from "./LoveReasons";
 import FinalSurprise from "./FinalSurprise";
 
@@ -61,59 +62,86 @@ function App() {
           </>
         ) : (
           <>
+
+            {/* PAGE 1 - BIRTHDAY CAKE */}
+
             {page === 1 && (
+              <>
+                <BirthdayCake />
+
+                <button
+                  className="next-button"
+                  onClick={() => setPage(2)}
+                >
+                  Continue 💕
+                </button>
+              </>
+            )}
+
+            {/* PAGE 2 - BIRTHDAY MESSAGE */}
+
+            {page === 2 && (
               <>
                 <BirthdayMessage />
 
                 <button
                   className="next-button"
-                  onClick={() => setPage(2)}
+                  onClick={() => setPage(3)}
                 >
                   Continue to Our Memories 📸
                 </button>
               </>
             )}
 
-            {page === 2 && (
+            {/* PAGE 3 - MEMORIES */}
+
+            {page === 3 && (
               <>
                 <Memories />
 
                 <button
                   className="next-button"
-                  onClick={() => setPage(3)}
+                  onClick={() => setPage(4)}
                 >
                   Continue to My Letter 💌
                 </button>
               </>
             )}
 
-            {page === 3 && (
+            {/* PAGE 4 - LOCKED LETTER */}
+
+            {page === 4 && (
               <>
-                <BirthdayLetter />
+                <LoveLetterEnvelope />
 
                 <button
                   className="next-button"
-                  onClick={() => setPage(4)}
+                  onClick={() => setPage(5)}
                 >
-                  Things I Love About You 💕
+                  Continue 💕
                 </button>
               </>
             )}
 
-            {page === 4 && (
+            {/* PAGE 5 - LOVE REASONS */}
+
+            {page === 5 && (
               <>
                 <LoveReasons />
 
                 <button
                   className="next-button"
-                  onClick={() => setPage(5)}
+                  onClick={() => setPage(6)}
                 >
                   One Last Surprise 🎁
                 </button>
               </>
             )}
 
-            {page === 5 && <FinalSurprise />}
+            {/* PAGE 6 - FINAL SURPRISE */}
+
+            {page === 6 && <FinalSurprise />}
+
           </>
         )}
 
